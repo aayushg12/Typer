@@ -1,41 +1,32 @@
 {
-  "manifest_version": 3,
-  "name": "Typer.ai",
-  "version": "1.0.0",
-  "description": "Inject a control panel with ChatGPT + human-like typer. Select a target on the page and type naturally.",
-  "permissions": [
-    "storage",
-    "activeTab",
-    "scripting",
-    "tabs",
-    "identity"
-  ],
-  "host_permissions": [
-    "<all_urls>"
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "action": {
-    "default_title": "Typer.ai"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content_script.js"],
-      "run_at": "document_idle"
-    }
-  ],
-  "options_page": "options.html",
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": ["panel.html", "panel.css", "panel.js", "icons/*"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+"manifest_version": 3,
+"name": "Typer",
+"version": "1.0",
+"description": " type text letter-by-letter into any selected element.",
+"icons": {
+"16": "icons/icon16.png",
+"48": "icons/icon48.png",
+"128": "icons/icon128.png"
+},
+"permissions": [
+"storage",
+"activeTab",
+"scripting"
+],
+"host_permissions": ["<all_urls>"],
+"action": {
+"default_title": "Typer",
+"default_popup": "sidebar.html"
+},
+"background": {
+"service_worker": "background.js"
+},
+"content_scripts": [
+{
+"matches": ["<all_urls>"],
+"js": ["content_script.js"],
+"run_at": "document_idle"
+}
+],
+"options_page": "options.html"
 }
