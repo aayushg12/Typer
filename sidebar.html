@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ChatGPT Typer</title>
+<link rel="stylesheet" href="sidebar.css" />
+</head>
+<body>
+<div id="app">
+<section id="chat">
+<h3>ChatGPT</h3>
+<textarea id="prompt" placeholder="Enter prompt or question..."></textarea>
+<div class="row">
+<select id="model">
+<option value="gpt-4o-mini">gpt-4o-mini</option>
+<option value="gpt-4o">gpt-4o</option>
+<option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+</select>
+<button id="sendBtn">Send</button>
+</div>
+<div id="chatResponse" class="box" contenteditable readonly></div>
+</section>
+
+
+<section id="paste">
+<h3>Paste / Findings</h3>
+<textarea id="findings" rows="6" placeholder="Paste notes or ChatGPT output here..."></textarea>
+<div class="row">
+<label for="speed">Speed</label>
+<select id="speed">
+<option value="slow">Slow</option>
+<option value="medium" selected>Medium</option>
+<option value="fast">Fast</option>
+</select>
+<button id="selectTarget">Select target</button>
+<button id="typeBtn">Type into page</button>
+<button id="stopBtn">Stop</button>
+</div>
+<div id="status" class="small"></div>
+</section>
+
+
+<section id="help" class="small">
+<a href="#" id="optionsLink">Options</a> • Click "Select target" then click an element on the page. Then press "Type into page".
+</section>
+</div>
+<script src="sidebar.js"></script>
+</body>
+</html>
